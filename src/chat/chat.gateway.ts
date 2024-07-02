@@ -5,8 +5,6 @@ import { Socket } from "socket.io";
 export class ChatGateway {
   @SubscribeMessage("newMessage")
   handleMessage(client: Socket, message: any) {
-    console.log(message);
-
     client.emit("reply", "This is a reply");
   }
 }
